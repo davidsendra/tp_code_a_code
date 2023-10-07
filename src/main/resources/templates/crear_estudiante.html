@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>CODO A CODO</title>
+
+</head>
+<body>
+
+
+	<nav>
+		<a href="#"> Control de estudiantes</a>
+		
+		<div>
+			<ul>
+				<li><a
+					th:href="@{/estudiantes}">CODO ACODO </a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <br>
+    <div>
+       <div>
+          <div>
+              <h1>Registro de estudiante</h1>
+              <div>
+                 <form th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
+                    <div class="form-group">
+                       <label>Nombre : </label>
+                       <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Escriba su nombre : " required>
+                    </div>
+                    
+                    <div>
+                       <label>Apellido : </label>
+                       <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Escriba su apellido : " required>
+                    </div>
+                    
+                    <div>
+                       <label>Email : </label>
+                       <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="Escriba su email : " required>
+                    </div>
+                   
+                    <div>
+                       <button>Guardar</button>
+                    </div>
+                 </form>
+              </div>
+          </div>
+       </div>
+    </div>
+</body>
+</html>

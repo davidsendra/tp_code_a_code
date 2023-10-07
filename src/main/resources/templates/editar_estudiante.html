@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Editar estudiante</title>
+
+</head>
+<body>
+
+
+	<nav>
+		<a  href="#"> CODO A CODO</a>
+		
+		<div>
+			<ul>
+				<li><a
+					th:href="@{/estudiantes}">Ir a lista de estudiantes</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <br>
+    <div>
+       <div>
+          <div>
+              <h1 class="text-center">Editar a estudiante</h1>
+              <div>
+                 <form th:action="@{/estudiantes/{id}(id=${estudiante.id})}" th:object="${estudiante}" method="POST">
+                    <div>
+                       <label>Nombre : </label>
+                       <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Escriba su nombre : " required>
+                    </div>
+                   
+                    <div>
+                       <label>Apellido : </label>
+                       <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Escriba su apellido : " required>
+                    </div>
+                    
+                    <div>
+                       <label>Email : </label>
+                       <input type="email" name="email" th:field="*{email}"  placeholder=" Email : " required>
+                    </div>
+                    
+                    <div class="box-footer">
+                       <button class="btn btn-success">Guardar</button>
+                    </div>
+                 </form>
+              </div>
+          </div>
+       </div>
+    </div>
+</body>
+</html>
